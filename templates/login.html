@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Travello</title>
+</head>
+<body>
+    <form action="login" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Username"><br>
+        <input type="password" name="password" placeholder="Enter Password"><br>
+        <button>Submit</button>
+    </form>
+    <div>
+        {% for i in messages%}
+        <h2>{{i}}</h2>
+        {% endfor %}
+    </div>
+</body>
+</html>

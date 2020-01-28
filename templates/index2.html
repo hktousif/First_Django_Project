@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Tousif's Website</title>
+    <link rel="stylesheet" href="bc.jpg"/>
+    <style>
+        body{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-image:url(https://www.rd.com/wp-content/uploads/2017/09/04_organize_Simple-Tweaks-for-a-Healthier-Work-Space_271851095-Jack-Frog.jpg);
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        .log{
+           
+            text-align:center;
+            width:270px;
+            margin: 250px auto; 
+            background-color:rgb(1,9, 255, .2);
+            border-radius:20px; 
+            box-shadow:0 0 20px #cc8800;
+        }
+        .log img{
+            width:100px;
+            margin-top:-50px;
+            border:none;
+            border-radius:30px;
+        }
+        .log h2{
+            color:white;
+            margin-top:5px;
+        }
+        input[type="text"],input[type="password"]{
+            border:none;
+            outline:none;
+            font-size:15px;
+            border-radius:30px;
+            height:30px;
+            width:200px;
+            margin:5px;
+            padding:4px;
+            text-align:center;
+            background-color:transparent;
+            color:black;
+            border-bottom: 3px solid teal;
+        }
+        ::placeholder{
+            color:lightslategray;
+        }
+        input[type="text"]:focus,input[type="password"]:focus{
+            border-bottom: 3px solid blue;
+            background-color:antiquewhite;
+
+        }
+        input[type="submit"]{
+            border-radius:20px;
+            margin:5px;
+            padding:10px 30px;
+            width:150px;
+            font-family:Tahoma;
+            background-color:cadetblue;
+            outline:none;
+        }
+        input[type="submit"]:hover,input[type="text"]:hover,input[type="password"]:hover{
+            cursor:pointer;
+            zoom:1.1;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="log">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSvlqE7r2ss8omR4OaMgwYPV12ZFzDEfP07SULVoazcEuPUYNm&s"/>
+        <h2>Log-In Here</h2>
+        <input type="text" name="username" placeholder="User Name"/><br/>
+        <input type="password" name="password" placeholder="Password"/><br/>
+        <div>
+            {% for i in messages%}
+            <h3 style="color:red">{{i}}</h3>
+            {% endfor %}
+        </div>
+        <input type="submit" value="Log In"/>
+
+    </div>
+</form>
+
+</body>
+</html>
